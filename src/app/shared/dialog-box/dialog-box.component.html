@@ -1,0 +1,22 @@
+<div class="items-center-wrap align-items-center">
+  <span class="title">
+    <span class="fas fa-edit"></span>
+    {{data.title}}
+  </span>
+
+</div>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.value">
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button class="cross-btn cancel-btn" mat-button (click)="onNoClick()">
+    Cancel  
+  </button>
+  <button mat-button [mat-dialog-close]="data.value" cdkFocusInitial class="dialog-btn button btn btn-primary"
+    id="btn-signin" type="button">
+    Save
+  </button>
+</div>

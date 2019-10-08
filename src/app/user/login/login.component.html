@@ -1,0 +1,76 @@
+<div class="main-wrapper">
+    <div class="row">
+        <div class="user-content-wrap col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="user-content-inner-wrap">
+                <img src="./../../../assets/images/todoapplogo.png" alt="TodoApp Logo" />
+                <p>
+                    ToDo App is an intuitive and easy to use online Todo list.
+                    It helps you to get organized,  
+                    simplify your life,
+                    and to get things done. Create todo lists,
+                    and manage them online from anywhere.
+
+                </p>  
+                <h5>Signin for ToDO List management system</h5>
+                <ul>
+                    <li><span class="fa fa-check-circle"></span>Create a ToDo List</li>
+                    <li><span class="fa fa-check-circle"></span>Add, delete and edit items</li>
+                    <li><span class="fa fa-check-circle"></span>Add sub-todo-items</li>
+                    <li><span class="fa fa-check-circle"></span>Add Friends</li>
+                    <li><span class="fa fa-check-circle"></span>Save & Share Todo List</li>
+                    <li><span class="fa fa-check-circle"></span>Notifications</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 user-board-wrap">
+            <div class="card border-success cardBorder">
+
+                <div class="card-body text-center">
+                    <div class="text-center">
+                        <h2>Sign in!</h2>
+                    </div>
+
+                    <form id="loginform" class="form-horizontal" role="form" #loginForm="ngForm">
+                        <div class="input-group  form-field-container">
+                            <mat-form-field appearance="standard">
+                                <input matInput placeholder="Email Id" [formControl]="email" required>
+                                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="input-group form-field-container">
+                            <mat-form-field appearance="standard">
+                                <input matInput type="password" placeholder="Password" minlength="8" #pwd="ngModel"
+                                    [(ngModel)]="password" name="password" (keydown)="loginUsingKeypress($event)"
+                                    required>
+                                <mat-hint>* Minimun 8 Characters</mat-hint>
+
+                                <mat-error *ngIf="pwd.errors?.required">required</mat-error>
+                                <mat-error *ngIf="pwd.errors?.minlength">Minimun 8 Characters Reuired</mat-error>
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button id="btn-signin" type="button" class="button btn btn-primary"
+                                    (click)="signInFunction()" [disabled]="!loginForm.valid">
+                                    <span> Sign In</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="links-wrap">
+                            <a mat-raised-link [routerLink]="['/user/forgot-password']">Forgot
+                                password?</a>
+                            <a mat-raised-link [routerLink]="['/user/signup']">Sign Up</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

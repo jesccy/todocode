@@ -1,0 +1,156 @@
+<div class="main-wrapper">
+  <div class="row">
+    <div class="user-content-wrap col-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="user-content-inner-wrap">
+        <img src="./../../../assets/images/todoapplogo.png" alt="TodoApp Logo" />
+        <p>
+          ToDo App is an intuitive and easy to use online Todo list.
+          It helps you to get organized,
+          simplify your life,
+          and to get things done. Create todo lists,
+          and manage them online from anywhere.
+          
+        </p>
+        <h5>Signup for ToDO List management system</h5>
+        <ul>
+          <li><span class="fa fa-check-circle"></span>Create a ToDo List</li>
+          <li><span class="fa fa-check-circle"></span>Add, delete and edit items</li>
+          <li><span class="fa fa-check-circle"></span>Add sub-todo-items</li>
+          <li><span class="fa fa-check-circle"></span>Add Friends</li>
+          <li><span class="fa fa-check-circle"></span>Save & Share Todo List</li>
+          <li><span class="fa fa-check-circle"></span>Notifications</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 user-board-wrap">
+      <div class="card border-success cardBorder">
+
+        <div class="card-body text-center">
+          <div class="text-center">
+            <h2>Sign up!</h2>
+          </div>
+
+          <form id="signupform" class="form-horizontal" role="form" #signupForm="ngForm">
+
+            <div class="row">
+
+              <div class="col-md-6 pr-0">
+                <div class="form-group">
+                  <div class="form-group form-field-container">
+
+                    <mat-form-field appearance="standard">
+                      <input matInput placeholder="First Name" minlength="3" #fstName="ngModel" [(ngModel)]="firstName"
+                        name="firstName" required>
+                      <mat-hint>* Min 3 Characters</mat-hint>
+                      <mat-error *ngIf="fstName.errors?.required">You must enter a value</mat-error>
+                      <mat-error *ngIf="fstName.errors?.minlength">You must enter atleast 3 Chars</mat-error>
+                    </mat-form-field>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <div class="form-group form-field-container">
+                    <mat-form-field appearance="standard">
+
+                      <input matInput placeholder="Last Name" minlength="3" #lstName="ngModel" [(ngModel)]="lastName"
+                        name="lastName" required>
+                      <mat-hint>* Min 3 Characters</mat-hint>
+
+                      <mat-error *ngIf="lstName.errors?.required">You must enter a value</mat-error>
+                      <mat-error *ngIf="lstName.errors?.minlength">You must enter atleast 3 Chars</mat-error>
+
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <div class="form-group form-field-container">
+                    <mat-form-field appearance="standard">
+                      <input matInput placeholder="Enter your email" [formControl]="email" required>
+                      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <div class="form-group form-field-container">
+                    <mat-form-field appearance="standard">
+                      <input matInput type="password" placeholder="Password" minlength="8" #pwd="ngModel"
+                        [(ngModel)]="password" name="password" required>
+                      <mat-hint>* Min 8 Characters</mat-hint>
+
+                      <mat-error *ngIf="pwd.errors?.required">You must enter a value</mat-error>
+                      <mat-error *ngIf="pwd.errors?.minlength">You must enter atleast 8 Chars</mat-error>
+
+                    </mat-form-field>
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group form-field-container">
+                  <mat-form-field appearance="standard">
+                    <mat-select placeholder="Select Country Name" [(value)]="country"
+                      (selectionChange)="onChangeOfCountry()" required>
+                      <mat-option *ngFor="let country of countries" [value]="country.code">{{country.name}}</mat-option>
+                    </mat-select>
+
+                  </mat-form-field>
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6">
+                <div class="form-group form-field-container">
+                  <mat-form-field appearance="standard">
+                    <input matInput placeholder="Mobile Number" type="number" class="example-right-align"
+                      [(ngModel)]="mobileNumber" name="mobileNumber" pattern="^\d{10}$" maxlength="10"
+                      #mobNumber="ngModel" required>
+
+                    <span matPrefix>+{{countryCode}} &nbsp;</span>
+
+
+                    <mat-hint>* Max 10 Digits</mat-hint>
+
+                    <mat-error *ngIf="mobNumber.errors?.required">You must enter a value</mat-error>
+                    <mat-error *ngIf="mobNumber.errors?.pattern">Only 10 Digits</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group text-center">
+              <div class="col-md-12">
+                <button id="btn-signup" type="button" class="button btn btn-primary" (click)="signupFunction()"
+                  [disabled]="!signupForm.valid">
+                  <span>Sign Up</span>
+                </button>
+              </div>
+            </div>
+            <div class="links-wrap">
+              <a mat-raised-link [routerLink]="['/user/login']">Have account? Sign
+                In</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
