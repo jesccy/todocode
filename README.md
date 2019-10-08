@@ -68,16 +68,16 @@ These instructions will get you a copy of the project up and running on your loc
 ## Screenshots of Application
 
 ### Login Page
-![alt loginpage](https://github.com/jesccy/toDoApp/blob/master/screenshots/login.jpg)
+![alt loginpage](https://github.com/jesccy/todocode/blob/master/screenshots/home.png)
 
-### Sign Up Page
-![alt signuppage](https://github.com/jesccy/toDoApp/blob/master/screenshots/signup.jpg)
+### List Items Page
+![alt signuppage](https://github.com/jesccy/todocode/blob/master/screenshots/ToDoApp-list.png)
 
 ### Single User Section
-![alt singleuserpage](https://github.com/jesccy/toDoApp/blob/master/screenshots/single-user.jpg)
+![alt singleuserpage](https://github.com/jesccy/todocode/blob/master/screenshots/ToDoApp-dashboard.png)
 
 ### Friends Section
-![alt friendspage](https://github.com/jesccy/toDoApp/blob/master/screenshots/friends.jpg)
+![alt friendspage](https://github.com/jesccy/todocode/blob/master/screenshots/ToDoApp-Friends.png)
 
 
 ## More about the application
